@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ATAGroupDemo.Views.StudentPage" Title="Student Info">
+    <ContentPage.Content>
+      <ScrollView>
+        <StackLayout  VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand" Margin="30,0" Spacing="20">
+            <StackLayout >
+            <Label Text="Enter Name :" TextColor="Black" FontSize="Medium"/>
+            <Entry IsEnabled="False" HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding Username}" Placeholder="abc@gmail.com"/>
+                </StackLayout>
+            <StackLayout>
+                <Label Text="Select Gender" TextColor="Black" FontSize="Medium"/>
+            <StackLayout IsEnabled="False" Orientation="Horizontal">
+        <RadioButton Text="Male"
+                     TextColor="Black"
+                     GroupName="colors" 
+                     IsChecked="{Binding IsMale}"/>
+                <Label Text="Male " TextColor="Black" FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout IsEnabled="False" Orientation="Horizontal">
+        <RadioButton Text="Female"
+                     TextColor="Black" 
+                     GroupName="colors" IsChecked="{Binding IsFemale}" />
+                    <Label Text="Female " TextColor="Black" FontSize="Medium"/>
+                    </StackLayout>
+                </StackLayout>
+            <StackLayout>
+            <Label Text="Enter Class :" TextColor="Black" FontSize="Medium"/>
+            <Entry IsEnabled="False" HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding StudentClass}" Placeholder=""/>
+                </StackLayout>
+                <StackLayout>
+            <Label Text="Enter DOB :" TextColor="Black" FontSize="Medium"/>
+            <DatePicker HeightRequest="{OnPlatform Android='40',iOS='30'}" Date="{Binding DOB}"/>
+                </StackLayout>
+             <StackLayout>
+            <Label Text="Enter Street :" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding Street}" Placeholder=""/>
+                </StackLayout>
+             <StackLayout>
+            <Label Text="Enter City :" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding City}" Placeholder=""/>
+                </StackLayout>
+            <StackLayout>
+            <Label Text="Enter State :" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding State}" Placeholder=""/>
+                </StackLayout>
+             <StackLayout>
+            <Label Text="Enter Country :" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding Country}" Placeholder=""/>
+                </StackLayout>
+             <StackLayout>
+            <Label Text="Enter PostalCode :" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding PostalCode}" Placeholder=""/>
+                </StackLayout>
+             <StackLayout>
+            <Label Text="Enter Email :" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding Email}" Placeholder="abc@gmail.com"/>
+                </StackLayout>
+
+            <StackLayout>
+            <Label Text="Enter Contact NO. :" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding Number}" Placeholder=""/>
+                </StackLayout>
+
+            <StackLayout>
+            <Label Text="Upload Pan Document :" TextColor="Black" FontSize="Medium"/>
+                
+             <Label Text="{Binding DocumentName}" TextColor="Green" FontSize="Medium">
+                 <Label.GestureRecognizers>
+                     <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding PanCommand}"/>
+                 </Label.GestureRecognizers>
+                 </Label>
+             </StackLayout>
+           
+
+
+             <Button Text="{Binding ButtonName}" BackgroundColor="Blue" Command="{Binding RegisterCommand}" HeightRequest="52"/>
+            
+        </StackLayout>
+          </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

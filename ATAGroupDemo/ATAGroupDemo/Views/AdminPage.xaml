@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:ATAGroupDemo.Helper"
+             x:Class="ATAGroupDemo.Views.AdminPage" Title="Admin Page">
+    <ContentPage.Resources>
+        <converter:AuditValueConverter x:Key="auditvlaueconverter"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid Margin="10" >
+            <ListView x:Name="studentlist" ItemsSource="{Binding StudentList}" HasUnevenRows="True"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="False" Margin="20"  BorderColor="Gray"  HeightRequest="{OnPlatform Android='150',iOS='40'}">
+                            <StackLayout >
+                                <Label Text="{Binding StudentName}" HorizontalOptions="StartAndExpand" TextColor="Black" FontSize="Medium"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding StudentGender}" HorizontalOptions="StartAndExpand" TextColor="Black" FontSize="Medium"/>
+                                    <Label Text="{Binding StudentClass}" HorizontalOptions="EndAndExpand" TextColor="Black" FontSize="Medium"/>
+                                </StackLayout>
+                                <Label Text="{Binding StudentEmail}" HorizontalOptions="StartAndExpand" TextColor="Black" FontSize="Medium"/>
+                                <Button Text="{Binding ISAuditable,Converter={StaticResource auditvlaueconverter}}" HeightRequest="52" Command="{Binding Path= BindingContext.AuditCommand, Source={x:Reference Name=studentlist}}" CommandParameter="{Binding .}" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Path= BindingContext.StudentCommand, Source={x:Reference Name=studentlist}}" CommandParameter="{Binding .}"/>
+                                </Frame.GestureRecognizers>
+                                </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

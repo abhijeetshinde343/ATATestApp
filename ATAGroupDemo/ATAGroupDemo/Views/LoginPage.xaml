@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ATAGroupDemo.Views.LoginPage" Title="Login Page">
+    <ContentPage.Content>
+        <StackLayout  VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Margin="30,0" Spacing="30">
+            <Label Text="Enter UserName" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding Username}" Placeholder="abc@gmail.com"/>
+             <Label Text="Enter Password" TextColor="Black" FontSize="Medium"/>
+            <Entry HeightRequest="{OnPlatform Android='40',iOS='30'}" Text="{Binding Password}" Placeholder="password" IsPassword="True"/>
+            
+            <Button Text="Login" BackgroundColor="Blue" Command="{Binding LoginCommand}" HeightRequest="52"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
