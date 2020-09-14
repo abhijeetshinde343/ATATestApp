@@ -49,19 +49,24 @@ namespace ATAGroupDemo.ViewModel
         {
             UserService userService = new UserService();
            var data=await userService.GetUserByUserName(this.Username, this.Password);
-            if(data!=null)
+            if (data != null)
             {
-                Settings.Role= data.Role.ToLower();
-            }
-            if(data.Role.ToLower()=="admin")
-            {
-               await Application.Current.MainPage.Navigation.PushAsync(new AdminPage());
+                Settings.Role = data.Role.ToLower();
+
+                if (data.Role.ToLower() == "admin")
+                {
+                    await Application.Current.MainPage.Navigation.PushAsync(new AdminPage());
+                }
+                else
+                {
+                    RegistrationService registrationService = new RegistrationService();
+                    StudentTable studentTable = await registrationService.GetStudentbyUserId(data.UserID);
+                    await Application.Current.MainPage.Navigation.PushAsync(new StudentPage(studentTable));
+                }
             }
             else
             {
-                RegistrationService registrationService = new RegistrationService();
-                StudentTable studentTable =await registrationService.GetStudentbyUserId(data.UserID);
-                await Application.Current.MainPage.Navigation.PushAsync(new StudentPage(studentTable));
+              await  Application.Current.MainPage.DisplayAlert("Alert","Invalid Login","Canel");
             }
 
         }

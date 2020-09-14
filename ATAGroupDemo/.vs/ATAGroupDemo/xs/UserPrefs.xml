@@ -1,9 +1,21 @@
 ﻿<Properties StartupConfiguration="{4B025659-6512-4A31-AC18-4C6815AEBB91}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ATAGroupDemo/ViewModel/LoginViewModel.cs">
+    <Files>
+      <File FileName="ATAGroupDemo/Services/UserService.cs" Line="24" Column="1" />
+      <File FileName="ATAGroupDemo/ViewModel/LoginViewModel.cs" Line="67" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="ATAGroupDemo" expanded="True" />
+          <Node name="ATAGroupDemo" expanded="True">
+            <Node name="ATAGroupDemo" expanded="True">
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModel" expanded="True">
+                <Node name="LoginViewModel.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
@@ -13,7 +25,9 @@
   <MonoDevelop.Ide.ItemProperties.ATAGroupDemo.Android PreferredExecutionTarget="Android.97f8b764" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/webwerks1/ATATestApp/ATAGroupDemo/ATAGroupDemo/Services/UserService.cs" relfile="ATAGroupDemo/Services/UserService.cs" line="23" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>
